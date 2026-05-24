@@ -27,7 +27,5 @@ jobs:
         with:
           context: .
           push: true
-          # ТУТ ВАЖНО: собираем под стандартную архитектуру, чтобы работало везде
           platforms: linux/amd64
-          # ЗАМЕНИ "логин_dockerhub" на свой реальный юзернейм
-          tags: логин_dockerhub/express-app:latest
+          tags: f10rya/express-pipeline:latest
