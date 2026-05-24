@@ -1,15 +1,16 @@
-version: '3.8'
-
 services:
   web:
     image: f10rya/express-pipeline:latest
     ports:
-      - "3000:3000"
+      - "3000:8080"
     restart: always
 
   watchtower:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_API_VERSION=1.40
+      - WATCHTOWER_CLEANUP=true
     command: --interval 10
     restart: always
